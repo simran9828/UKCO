@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>UKCO — India, Meet Kalari | Modern Kalari QSR from Jaipur</title>
+  <meta name="author" content="UKCO"/>
+  <meta name="description" content="UKCO is a modern Indian QSR built around Kalari — a traditional milk-based, naturally fermented food rooted in Udhampur, now made fresh in Jaipur. Explore the food, the story and franchise opportunities."/>
+  <meta property="og:title" content="UKCO — India, Meet Kalari"/>
+  <meta property="og:description" content="Udhampur gave it its roots. UKCO is giving it a future. Kalari, reimagined for modern India."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="./hero_lovable.jpg"/>
+
+  <!-- Google Fonts: Anton (Display Headline) & Manrope (Body & Editorial) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "UKCO — Meet Kalari",
+    "image": "./hero_lovable.jpg",
+    "description": "Modern Indian QSR built around Kalari. Rooted in Udhampur heritage, engineered and made fresh in Jaipur.",
+    "servesCuisine": "Modern Indian Street Food, Jammu Regional Specialties",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Su 11:30-23:30",
+    "priceRange": "₹₹"
+  }
+  </script>
+
+  <style>
+    /* -------------------------------------------------------------
+       DESIGN SYSTEM & TOKENS (Referencing build-and-bloom-22.lovable.app)
+       Fonts: Anton (Headings) & Manrope (Body/UI)
+       Palette: Deep Obsidian (#0B0C0E), Cream (#FAF5EB), Ember (#F05423 / #FF5722)
+    ------------------------------------------------------------- */
+    :root {
+      --background: #0B0C0E;
+      --card: #14161A;
+      --card-elevated: #1B1E24;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(240, 84, 35, 0.45);
+      
+      --cream: #FAF5EB;
+      --ember: #F05423;
+      --ember-glow: rgba(240, 84, 35, 0.28);
+      --primary: #F05423;
+      --primary-foreground: #0B0C0E;
+      
+      --muted-foreground: #9499A6;
+      --input: rgba(255, 255, 255, 0.12);
+      
+      --font-display: 'Anton', sans-serif;
+      --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--background);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--background);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232730;
+      border-radius: var(--radius-full);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--ember);
+    }
+
+    /* Typography & Utilities */
+    .font-display {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 0.95;
+    }
+    .text-cream { color: var(--cream); }
+    .text-ember { color: var(--ember); }
+    .text-muted { color: var(--muted-foreground); }
+
+    .kicker {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--ember);
+      display: inline-block;
+    }
+
+    .display-xl {
+      font-family: var(--font-display);
+      font-size: clamp(3.8rem, 9.5vw, 8rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+    }
+
+    .section-pad {
+      padding-top: clamp(4rem, 8vw, 7.5rem);
+      padding-bottom: clamp(4rem, 8vw, 7.5rem);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+
+    /* Grain Overlay Effect */
+    .grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Buttons */
+    .btn-pill-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #FFF;
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all var(--transition-smooth);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-pill-primary:hover {
+      transform: scale(1.05);
+      background: #ff6838;
+      box-shadow: 0 0 25px var(--ember-glow);
+    }
+
+    .btn-pill-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(250, 245, 235, 0.4);
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all var(--transition-smooth);
+      cursor: pointer;
+    }
+    .btn-pill-outline:hover {
+      background: rgba(250, 245, 235, 0.1);
+      border-color: var(--cream);
+    }
+
+    /* -------------------------------------------------------------
+       NAVBAR
+    ------------------------------------------------------------- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
+      background: transparent;
+    }
+    .site-header.scrolled {
+      background: rgba(11, 12, 14, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .logo-brand {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      text-decoration: none;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+    }
+    .nav-menu {
+      display: none;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    @media (min-width: 860px) {
+      .nav-menu { display: flex; }
+    }
+    .nav-item-link {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted-foreground);
+      text-decoration: none;
+      transition: color var(--transition-smooth);
+    }
+    .nav-item-link:hover {
+      color: var(--cream);
+    }
+    .nav-order-btn {
+      background: var(--primary);
+      color: #FFF;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      text-decoration: none;
+      transition: transform var(--transition-smooth);
+    }
+    .nav-order-btn:hover {
+      transform: scale(1.05);
+    }
+    .mobile-menu-btn {
+      display: block;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--cream);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    @media (min-width: 860px) {
+      .mobile-menu-btn { display: none; }
+    }
+    .mobile-dropdown {
+      display: none;
+      background: var(--background);
+      border-bottom: 1px solid var(--border);
+      padding: 20px;
+    }
+    .mobile-dropdown.open { display: block; }
+    .mobile-dropdown a {
+      display: block;
+      padding: 12px 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 01: HERO
+    ------------------------------------------------------------- */
+    .hero-container {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding-bottom: clamp(4rem, 9vw, 7rem);
+    }
+    .hero-bg-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--background) 0%, rgba(11, 12, 14, 0.8) 50%, rgba(11, 12, 14, 0.4) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .hero-subtext {
+      margin-top: 24px;
+      max-width: 580px;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--muted-foreground);
+      line-height: 1.6;
+    }
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 02: THE DISCOVERY (What is Kalari?)
+    ------------------------------------------------------------- */
+    .discovery-grid {
+      display: grid;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .discovery-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .pull-quote {
+      margin-top: 32px;
+      border-left: 3px solid var(--ember);
+      padding-left: 20px;
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+    .block-image-card {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      max-height: 540px;
+      border: 1px solid var(--border);
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 03: THE HARDER PROBLEM (Story & Mr. Bhand)
+    ------------------------------------------------------------- */
+    .story-box {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 04: MADE HERE, TODAY (Udhampur vs Jaipur)
+    ------------------------------------------------------------- */
+    .jaipur-grid {
+      display: grid;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .jaipur-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .production-pills {
+      margin-top: 32px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .pill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      text-align: center;
+    }
+    .pill-card p {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 05: WHY KALARI
+    ------------------------------------------------------------- */
+    .why-grid {
+      margin-top: 48px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .why-card {
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      transition: border-color var(--transition-smooth), transform var(--transition-smooth);
+    }
+    .why-card:hover {
+      border-color: var(--ember);
+      transform: translateY(-4px);
+    }
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--ember);
+      line-height: 1;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 06: THE FOOD (Menu Grid)
+    ------------------------------------------------------------- */
+    .food-grid {
+      margin-top: 48px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .food-item-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      transition: all var(--transition-smooth);
+      cursor: pointer;
+    }
+    .food-item-card:hover {
+      border-color: var(--ember);
+      background: var(--card-elevated);
+    }
+    .try-tag {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ember);
+      opacity: 0.4;
+      transition: opacity var(--transition-smooth);
+    }
+    .food-item-card:hover .try-tag {
+      opacity: 1;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 07: UKCO CULTURE
+    ------------------------------------------------------------- */
+    .culture-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .culture-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .culture-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 12, 14, 0.85);
+      z-index: 1;
+    }
+    .culture-content {
+      position: relative;
+      z-index: 2;
+    }
+    .culture-chips-grid {
+      margin-top: 40px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .culture-chip {
+      background: rgba(11, 12, 14, 0.65);
+      border: 1px solid rgba(250, 245, 235, 0.2);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: border-color var(--transition-smooth);
+    }
+    .culture-chip:hover {
+      border-color: var(--ember);
+    }
+    .culture-chip p {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 09: THE FUTURE
+    ------------------------------------------------------------- */
+    .future-cards-grid {
+      margin-top: 48px;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .future-step-card {
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION 10: FRANCHISE PLATFORM
+    ------------------------------------------------------------- */
+    .franchise-grid {
+      display: grid;
+      gap: 48px;
+    }
+    @media (min-width: 992px) {
+      .franchise-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+    .franchise-bullets {
+      margin-top: 32px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .franchise-bullets li {
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      color: var(--muted-foreground);
+      font-size: 0.95rem;
+    }
+    .franchise-form-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 5vw, 2.5rem);
+    }
+    .form-row {
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 600px) {
+      .form-row { grid-template-columns: 1fr 1fr; }
+    }
+    .form-field {
+      margin-bottom: 16px;
+    }
+    .field-label {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted-foreground);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .input-ctrl, .select-ctrl, .textarea-ctrl {
+      width: 100%;
+      background: var(--background);
+      border: 1px solid var(--input);
+      color: var(--cream);
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--transition-smooth);
+    }
+    .input-ctrl:focus, .select-ctrl:focus, .textarea-ctrl:focus {
+      border-color: var(--ember);
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER
+    ------------------------------------------------------------- */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: clamp(3rem, 7vw, 5rem) 0 2rem;
+    }
+
+    /* -------------------------------------------------------------
+       MOBILE FIXED DOCK
+    ------------------------------------------------------------- */
+    .mobile-fixed-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      border-top: 1px solid var(--border);
+      background: rgba(11, 12, 14, 0.95);
+      backdrop-filter: blur(14px);
+      padding: 12px 18px;
+      display: flex;
+      gap: 12px;
+    }
+    @media (min-width: 768px) {
+      .mobile-fixed-dock { display: none; }
+    }
+
+    /* -------------------------------------------------------------
+       EXTRA ADDON: FOUNDER STRATEGY & VALIDATION CONTROLLER (Mr. Bhand)
+    ------------------------------------------------------------- */
+    .founder-mode-badge {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 99;
+      background: #1B1E24;
+      border: 1px solid var(--ember);
+      color: var(--cream);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 16px var(--ember-glow);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all var(--transition-smooth);
+    }
+    .founder-mode-badge:hover {
+      transform: translateY(-2px);
+      background: #252A33;
+    }
+    .pulse-amber {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ember);
+      box-shadow: 0 0 10px var(--ember);
+    }
+    .founder-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 200;
+      display: none;
+      justify-content: flex-end;
+    }
+    .founder-drawer-overlay.open {
+      display: flex;
+    }
+    .founder-drawer {
+      width: 100%;
+      max-width: 640px;
+      height: 100%;
+      background: var(--card);
+      border-left: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Extra Addon: Sensory Simulator */
+    .interactive-stretch-box {
+      margin-top: 24px;
+      background: var(--background);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- Grain filter overlay -->
+  <div class="grain" style="position: fixed; inset: 0; z-index: 1;"></div>
+
+  <!-- =============================================================
+       STICKY HEADER / NAVBAR
+  ============================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-nav">
+      <a href="#top" class="logo-brand">
+        UK<span class="text-ember">CO</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#kalari" class="nav-item-link">Kalari</a></li>
+        <li><a href="#story" class="nav-item-link">Story</a></li>
+        <li><a href="#jaipur" class="nav-item-link">Jaipur</a></li>
+        <li><a href="#food" class="nav-item-link">Food</a></li>
+        <li><a href="#culture" class="nav-item-link">Culture</a></li>
+        <li><a href="#franchise" class="nav-item-link">Franchise</a></li>
+        <li><a href="#food" class="nav-order-btn">Order Now</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation">
+        Menu
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-dropdown" id="mobileDropdown">
+      <a href="#kalari" onclick="toggleMobileNav()">Kalari</a>
+      <a href="#story" onclick="toggleMobileNav()">Story</a>
+      <a href="#jaipur" onclick="toggleMobileNav()">Jaipur</a>
+      <a href="#food" onclick="toggleMobileNav()">Food</a>
+      <a href="#culture" onclick="toggleMobileNav()">Culture</a>
+      <a href="#franchise" onclick="toggleMobileNav()">Franchise</a>
+      <a href="#food" onclick="toggleMobileNav()" style="color: var(--ember);">Order Now</a>
+    </div>
+  </header>
+
+  <!-- =============================================================
+       SECTION 01: HERO
+  ============================================================= -->
+  <section class="hero-container">
+    <img src="./hero_lovable.jpg" alt="Molten seared Kalari pulling apart between griddled kulcha" class="hero-bg-media" onerror="this.src='./kalari_burger.jpg'"/>
+    <div class="hero-gradient-overlay"></div>
+
+    <div class="container hero-content">
+      <p class="kicker">Udhampur → Jaipur → India</p>
+      
+      <h1 class="display-xl text-cream" style="margin-top: 14px;">
+        India,<br>meet <span class="text-ember">Kalari</span>.
+      </h1>
+
+      <p class="hero-subtext">
+        A regional food tradition that stayed hidden for generations. 
+        UKCO is building a modern QSR around it — made fresh in Jaipur.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#food" class="btn-pill-primary">Explore the food</a>
+        <a href="#kalari" class="btn-pill-outline">What is Kalari?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 02: THE DISCOVERY (What is Kalari?)
+  ============================================================= -->
+  <section id="kalari" class="section-pad">
+    <div class="container">
+      <div class="discovery-grid">
+        <div>
+          <p class="kicker">02 — The discovery</p>
+          <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px;">
+            So, what is Kalari?
+          </h2>
+          <p style="margin-top: 24px; font-size: 1.1rem; line-height: 1.7; color: var(--muted-foreground);">
+            Kalari is a traditional milk-based, naturally fermented food associated with the Jammu region — particularly Udhampur. Firm when it's cold. Molten, stretchy and deeply savoury the moment it meets a hot griddle.
+          </p>
+          <p style="margin-top: 16px; font-size: 1.1rem; line-height: 1.7; color: var(--muted-foreground);">
+            Most of India has never tasted it. That's the whole point.
+          </p>
+
+          <p class="pull-quote">
+            Why should something this good stay known only to a few people?
+          </p>
+
+          <!-- Interactive Cheese Pull Simulator Addon -->
+          <div class="interactive-stretch-box">
+            <span class="kicker" style="font-size: 0.68rem;">Interactive Sensory Test</span>
+            <p style="font-size: 0.85rem; color: var(--cream); margin-top: 4px;">
+              Slide to test the natural fermented Kalari stretch:
+            </p>
+            <input type="range" id="cheeseSlider" min="10" max="100" value="40" style="width: 80%; margin: 12px 0; accent-color: var(--ember); cursor: pointer;" oninput="updateStretchDemo(this.value)">
+            <div id="cheesePullGraphic" style="height: 12px; width: 40%; background: linear-gradient(90deg, #E58E26, #FFF2B2, #E58E26); border-radius: 6px; margin: 0 auto; box-shadow: 0 0 14px var(--ember-glow); transition: width 0.1s ease;"></div>
+          </div>
+        </div>
+
+        <div>
+          <img src="./kalari_block.jpg" alt="A block of traditional fermented Kalari on dark slate" class="block-image-card" onerror="this.src='./kalari_sear.jpg'"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 03: THE HARDER PROBLEM (Our Story)
+  ============================================================= -->
+  <section id="story" class="section-pad" style="background: var(--card);">
+    <div class="container">
+      <div class="story-box">
+        <p class="kicker">03 — The harder problem</p>
+        <h2 class="font-display text-cream" style="font-size: clamp(2.4rem, 5vw, 4.2rem); margin-top: 14px;">
+          We didn't just want to serve Kalari.
+        </h2>
+        <p style="margin-top: 24px; font-size: 1.15rem; line-height: 1.7; color: var(--muted-foreground);">
+          Moving a regional food to another city is easy to say and hard to do. Freshness, hygiene, consistency, reliability — a tradition only travels when there's a real system behind it.
+        </p>
+        <p style="margin-top: 14px; font-size: 1.15rem; line-height: 1.7; color: var(--muted-foreground);">
+          So UKCO built the system first: a controlled, modern process designed for a QSR that has to deliver the same quality every single day.
+        </p>
+
+        <p class="font-display text-ember" style="font-size: clamp(1.8rem, 3.8vw, 2.8rem); margin-top: 36px; line-height: 1.1;">
+          Udhampur gave it its roots.<br>
+          UKCO is giving it a future.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 04: MADE HERE, TODAY (Jaipur Production)
+  ============================================================= -->
+  <section id="jaipur" class="section-pad">
+    <div class="container">
+      <div class="jaipur-grid">
+        <div>
+          <img src="./jaipur_prod.jpg" alt="Fresh Kalari being prepared in a clean Jaipur production kitchen" class="block-image-card" onerror="this.src='./kalari_burger.jpg'"/>
+        </div>
+
+        <div>
+          <p class="kicker">04 — Made here, today</p>
+          <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px;">
+            Rooted in Udhampur.<br>
+            <span class="text-ember">Made fresh in Jaipur.</span>
+          </h2>
+          <p style="margin-top: 24px; font-size: 1.1rem; line-height: 1.7; color: var(--muted-foreground);">
+            Udhampur is where the tradition comes from. Jaipur is where UKCO makes it now — in our own controlled production setup, close to the counter, so what reaches you is fresh.
+          </p>
+
+          <div class="production-pills">
+            <div class="pill-card">
+              <p>Local production</p>
+            </div>
+            <div class="pill-card">
+              <p>Controlled process</p>
+            </div>
+            <div class="pill-card">
+              <p>Quality first</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 05: WHY KALARI
+  ============================================================= -->
+  <section class="section-pad" style="background: var(--card);">
+    <div class="container">
+      <p class="kicker">05 — Why Kalari</p>
+      <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px; max-width: 760px;">
+        Good food first. Everything else after.
+      </h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-num">01</span>
+          <h3 style="margin-top: 16px; font-size: 1.25rem; color: var(--cream);">Milk-based</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            Made from milk, the way regional food traditions have always done it.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <span class="why-num">02</span>
+          <h3 style="margin-top: 16px; font-size: 1.25rem; color: var(--cream);">Naturally fermented</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            Fermentation gives Kalari its character and distinctive depth.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <span class="why-num">03</span>
+          <h3 style="margin-top: 16px; font-size: 1.25rem; color: var(--cream);">Protein & calcium</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            A milk food, naturally rich in protein and calcium.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <span class="why-num">04</span>
+          <h3 style="margin-top: 16px; font-size: 1.25rem; color: var(--cream);">That texture</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            Firm on the outside, molten and stretchy the second it hits the heat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 06: THE FOOD
+  ============================================================= -->
+  <section id="food" class="section-pad">
+    <div class="container">
+      <p class="kicker">06 — The food</p>
+      <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px;">
+        Kalari, every way.
+      </h2>
+
+      <div class="food-grid">
+        <div class="food-item-card" onclick="openOrderModal('Kalari Kulcha', 'The signature. Griddled Kalari between soft kulcha, spiced and stretchy.', '₹189')">
+          <div>
+            <h3 style="font-size: 1.5rem; color: var(--cream);">Kalari Kulcha</h3>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.5;">
+              The signature. Griddled Kalari between soft kulcha, spiced and stretchy.
+            </p>
+          </div>
+          <span class="try-tag">Try ▸</span>
+        </div>
+
+        <div class="food-item-card" onclick="openOrderModal('Kalari Roll', 'Street format. Hot Kalari, onions, chutney, wrapped and gone in minutes.', '₹199')">
+          <div>
+            <h3 style="font-size: 1.5rem; color: var(--cream);">Kalari Roll</h3>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.5;">
+              Street format. Hot Kalari, onions, chutney, wrapped and gone in minutes.
+            </p>
+          </div>
+          <span class="try-tag">Try ▸</span>
+        </div>
+
+        <div class="food-item-card" onclick="openOrderModal('Tawa Kalari', 'Just Kalari on the griddle. Charred edges, chilli, lime. Nothing hidden.', '₹179')">
+          <div>
+            <h3 style="font-size: 1.5rem; color: var(--cream);">Tawa Kalari</h3>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.5;">
+              Just Kalari on the griddle. Charred edges, chilli, lime. Nothing hidden.
+            </p>
+          </div>
+          <span class="try-tag">Try ▸</span>
+        </div>
+
+        <div class="food-item-card" onclick="openOrderModal('Kalari Loaded Fries', 'Fries under a blanket of melted Kalari for people who share plates.', '₹159')">
+          <div>
+            <h3 style="font-size: 1.5rem; color: var(--cream);">Kalari Loaded Fries</h3>
+            <p style="margin-top: 8px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.5;">
+              Fries under a blanket of melted Kalari for people who share plates.
+            </p>
+          </div>
+          <span class="try-tag">Try ▸</span>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted-foreground);">
+        Sample line-up — final menu to be confirmed by UKCO.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 07: UKCO CULTURE
+  ============================================================= -->
+  <section id="culture" class="culture-wrapper">
+    <img src="./culture_crowd.jpg" alt="Young friends eating street food together at night in Jaipur" class="culture-bg" onerror="this.src='./ukco_culture.jpg'"/>
+    <div class="culture-overlay"></div>
+
+    <div class="container section-pad culture-content">
+      <p class="kicker">07 — UKCO Culture</p>
+      <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px; max-width: 800px;">
+        Food, friends, music, the city.
+      </h2>
+      <p style="margin-top: 20px; font-size: 1.15rem; color: var(--cream); max-width: 650px; line-height: 1.6;">
+        UKCO doesn't want to behave like a restaurant advertiser. We show up where people already are — events, artists, creators, pop-ups and community moments — and let Kalari do the talking.
+      </p>
+
+      <div class="culture-chips-grid">
+        <div class="culture-chip">
+          <p>Events</p>
+        </div>
+        <div class="culture-chip">
+          <p>Artists</p>
+        </div>
+        <div class="culture-chip">
+          <p>Creators</p>
+        </div>
+        <div class="culture-chip">
+          <p>Pop-ups</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 09: THE FUTURE
+  ============================================================= -->
+  <section id="find" class="section-pad" style="background: var(--card);">
+    <div class="container">
+      <p class="kicker">09 — The future</p>
+      <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px; max-width: 750px;">
+        One day, UKCO across India.
+      </h2>
+
+      <div class="future-cards-grid">
+        <div class="future-step-card">
+          <p class="kicker">Now</p>
+          <h3 class="font-display text-cream" style="font-size: 2rem; margin-top: 10px;">Jaipur</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            Production and outlets — the home of UKCO today.
+          </p>
+        </div>
+
+        <div class="future-step-card">
+          <p class="kicker">Next</p>
+          <h3 class="font-display text-cream" style="font-size: 2rem; margin-top: 10px;">Coming soon</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            New locations as the format is proven city by city.
+          </p>
+        </div>
+
+        <div class="future-step-card">
+          <p class="kicker">Ambition</p>
+          <h3 class="font-display text-cream" style="font-size: 2rem; margin-top: 10px;">India</h3>
+          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--muted-foreground); line-height: 1.6;">
+            A national Kalari QSR network built with franchise partners.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top: 24px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted-foreground);">
+        Verified outlet addresses will be listed here once confirmed.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       SECTION 10: FRANCHISE PLATFORM
+  ============================================================= -->
+  <section id="franchise" class="section-pad">
+    <div class="container">
+      <div class="franchise-grid">
+        <div>
+          <p class="kicker">10 — Franchise</p>
+          <h2 class="font-display text-cream" style="font-size: clamp(2.5rem, 5vw, 4.2rem); margin-top: 14px;">
+            Bring UKCO to your city.
+          </h2>
+          <p style="margin-top: 24px; font-size: 1.1rem; line-height: 1.7; color: var(--muted-foreground);">
+            Kalari is an emerging category with almost no competition. UKCO is building the system around it — product, production, process and brand — so partners can run a differentiated QSR instead of another lookalike outlet.
+          </p>
+
+          <ul class="franchise-bullets">
+            <li><span class="text-ember">▸</span> Differentiated product in an emerging category</li>
+            <li><span class="text-ember">▸</span> Standardised Kalari production and controlled processes</li>
+            <li><span class="text-ember">▸</span> Operational SOPs across the outlet</li>
+            <li><span class="text-ember">▸</span> Training and onboarding support</li>
+            <li><span class="text-ember">▸</span> Brand and marketing support</li>
+            <li><span class="text-ember">▸</span> Scalable QSR format</li>
+            <li><span class="text-ember">▸</span> COCO + franchise expansion model</li>
+          </ul>
+        </div>
+
+        <!-- Form Box -->
+        <div class="franchise-form-box" id="franchiseFormContainer">
+          <form onsubmit="handleFranchiseSubmit(event)">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="field-label">Name *</label>
+                <input type="text" name="name" required class="input-ctrl" placeholder="Your name"/>
+              </div>
+              <div class="form-field">
+                <label class="field-label">Phone *</label>
+                <input type="tel" name="phone" required class="input-ctrl" placeholder="+91"/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="field-label">Email *</label>
+                <input type="email" name="email" required class="input-ctrl" placeholder="name@example.com"/>
+              </div>
+              <div class="form-field">
+                <label class="field-label">City *</label>
+                <input type="text" name="city" required class="input-ctrl" placeholder="Target city"/>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Preferred location</label>
+              <input type="text" name="location" class="input-ctrl" placeholder="Neighborhood or commercial area"/>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Investment range *</label>
+              <select name="investment" required class="select-ctrl">
+                <option value="">Select capital range</option>
+                <option value="Under ₹10 lakh">Under ₹10 lakh</option>
+                <option value="₹10–25 lakh">₹10–25 lakh</option>
+                <option value="₹25–50 lakh">₹25–50 lakh</option>
+                <option value="₹50 lakh+">₹50 lakh+</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Current business experience</label>
+              <input type="text" name="experience" class="input-ctrl" placeholder="F&B, retail, or other background"/>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Message</label>
+              <textarea name="message" rows="3" class="textarea-ctrl" placeholder="Tell us about your plans"></textarea>
+            </div>
+
+            <button type="submit" class="btn-pill-primary" style="width: 100%; margin-top: 10px; padding: 18px;">
+              Bring UKCO to your city
+            </button>
+
+            <p style="margin-top: 14px; text-align: center; font-size: 0.72rem; color: var(--muted-foreground);">
+              We share the model honestly — no guaranteed returns, no inflated claims.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       FOOTER
+  ============================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="font-display text-cream" style="font-size: clamp(2.5rem, 6.5vw, 4.8rem); line-height: 1;">
+        Tradition × Culture × Food × Youth × Scale
+      </p>
+      <p class="font-display text-ember" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-top: 24px;">
+        Meet Kalari.
+      </p>
+
+      <div style="margin-top: 48px; border-top: 1px solid var(--border); padding-top: 28px; display: flex; flex-direction: column; gap: 14px; justify-content: space-between; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted-foreground);">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+          <span>UKCO — Kalari, made fresh in Jaipur</span>
+          <span>© 2026 UKCO</span>
+        </div>
+        <div style="font-size: 0.68rem; color: #555A66; text-transform: none;">
+          Strategic Alignment Document & Digital Headquarters for Mr. Bhand
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================================
+       FIXED MOBILE DOCK
+  ============================================================= -->
+  <div class="mobile-fixed-dock">
+    <a href="#food" class="btn-pill-primary" style="flex: 1; padding: 14px 0; text-align: center;">Order now</a>
+    <a href="#franchise" class="btn-pill-outline" style="flex: 1; padding: 14px 0; text-align: center;">Franchise</a>
+  </div>
+
+  <!-- =============================================================
+       EXTRA ADDON: FOUNDER STRATEGY & VALIDATION CONTROLLER
+  ============================================================= -->
+  <div class="founder-mode-badge" onclick="toggleFounderDrawer()" title="Click to open Mr. Bhand's Founder Alignment Panel">
+    <div class="pulse-amber"></div>
+    <span>Founder Review Mode (Mr. Bhand)</span>
+  </div>
+
+  <div class="founder-drawer-overlay" id="founderDrawerOverlay" onclick="if(event.target===this) toggleFounderDrawer()">
+    <div class="founder-drawer">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border); padding-bottom: 18px;">
+        <div>
+          <span class="kicker">Section 17 • Founder Sign-off</span>
+          <h3 class="font-display text-cream" style="font-size: 1.8rem; margin-top: 6px;">Strategic Alignment Suite</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Prepared for Mr. Bhand</p>
+        </div>
+        <button onclick="toggleFounderDrawer()" style="background: none; border: none; color: var(--cream); font-size: 2rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <!-- Live Guardrail Auditor -->
+      <div style="background: var(--background); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px;">
+        <h4 style="color: var(--ember); font-size: 0.95rem; margin-bottom: 8px;">🛡️ Non-Negotiable Guardrails Compliance</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.78rem;">
+          <div style="color: #2EE59D;">✓ Udhampur = Roots/Heritage Only</div>
+          <div style="color: #2EE59D;">✓ Jaipur = Fresh Daily Setup</div>
+          <div style="color: #2EE59D;">✓ Zero Fake Health Claims</div>
+          <div style="color: #2EE59D;">✓ Zero Invented Outlets/ROI</div>
+        </div>
+      </div>
+
+      <!-- 11 Validation Items -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h4 style="font-size: 1rem; color: var(--cream);">11 Strategy Checkpoints</h4>
+          <span id="founderCounter" style="font-size: 0.75rem; background: rgba(240, 84, 35, 0.2); color: var(--ember); padding: 4px 10px; border-radius: 9999px; font-weight: 700;">0 / 11 Checked</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;" id="chkListContainer">
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>1. Narrative: Udhampur roots → UKCO system → Jaipur fresh production → India scale.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>2. Production: Controlled Jaipur setup communicated without leaking proprietary trade secrets.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>3. Positioning: Discovery-first tone resonating with 18–34 urban audience.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>4. Food-first: No exaggerated health claims; honest, wholesome dairy message.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>5. Approved Menu: Kulcha, Roll, Tawa Kalari, Loaded Fries aligned.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>6. Culture Strategy: Events, Artists, Creators, Pop-ups framework.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>7. Roadmap: Distinction between current Jaipur outlets & future India expansion.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>8. Franchise Architecture: COCO + franchise model with honest disclaimers.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>9. Aesthetic Integrity: Bold Anton headlines + warm cream/ember editorial tones.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>10. CTA Hierarchy: "Explore the food" & "Bring UKCO to your city" balanced.</span>
+          </label>
+          <label style="display: flex; gap: 10px; font-size: 0.82rem; color: var(--muted-foreground); cursor: pointer;">
+            <input type="checkbox" onchange="calcChecklist()" style="accent-color: var(--ember);">
+            <span>11. Final Validation: Ready for public launch sign-off by Mr. Bhand.</span>
+          </label>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+          <button class="btn-pill-primary" style="padding: 10px 18px; font-size: 0.75rem;" onclick="exportFounderJSON()">Export Feedback JSON</button>
+          <button class="btn-pill-outline" style="padding: 10px 18px; font-size: 0.75rem;" onclick="markAllFounderChecklist()">Approve All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Quick Order Modal -->
+  <div id="quickOrderModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 300; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); max-width: 480px; width: 100%; padding: 32px; position: relative;">
+      <button onclick="closeOrderModal()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--cream); font-size: 1.5rem; cursor: pointer;">&times;</button>
+      <span class="kicker">Fresh from Jaipur Kitchen</span>
+      <h3 id="modalFoodTitle" class="font-display text-cream" style="font-size: 1.8rem; margin-top: 8px;">Item</h3>
+      <p id="modalFoodDesc" style="margin-top: 8px; font-size: 0.9rem; color: var(--muted-foreground);"></p>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin: 24px 0; padding: 14px; background: var(--background); border-radius: var(--radius-sm);">
+        <span style="font-weight: 700; color: var(--cream);">Standard Portion</span>
+        <span id="modalFoodPrice" class="font-display text-ember" style="font-size: 1.4rem;">₹189</span>
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="btn-pill-primary" style="flex: 1;" onclick="sendWhatsAppOrder()">Order via WhatsApp</button>
+        <button class="btn-pill-outline" onclick="closeOrderModal()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================================
+       JAVASCRIPT LOGIC
+  ============================================================= -->
+  <script>
+    // Header Scroll Observer
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile Navigation Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileDropdown = document.getElementById('mobileDropdown');
+    function toggleMobileNav() {
+      const isOpen = mobileDropdown.classList.toggle('open');
+      mobileMenuToggle.textContent = isOpen ? 'Close' : 'Menu';
+    }
+    mobileMenuToggle.addEventListener('click', toggleMobileNav);
+
+    // Cheese stretch sensory slider
+    function updateStretchDemo(val) {
+      const bar = document.getElementById('cheesePullGraphic');
+      bar.style.width = val + '%';
+    }
+
+    // Quick Order Modal
+    let selectedFoodName = 'Kalari Kulcha';
+    let selectedFoodPrice = '₹189';
+
+    function openOrderModal(title, desc, price) {
+      selectedFoodName = title;
+      selectedFoodPrice = price;
+      document.getElementById('modalFoodTitle').textContent = title;
+      document.getElementById('modalFoodDesc').textContent = desc;
+      document.getElementById('modalFoodPrice').textContent = price;
+      const modal = document.getElementById('quickOrderModal');
+      modal.style.display = 'flex';
+    }
+
+    function closeOrderModal() {
+      document.getElementById('quickOrderModal').style.display = 'none';
+    }
+
+    function sendWhatsAppOrder() {
+      const text = encodeURIComponent(`Hi UKCO Jaipur! I would like to order: ${selectedFoodName} (${selectedFoodPrice}). Please confirm availability & dispatch time.`);
+      window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+      closeOrderModal();
+    }
+
+    // Franchise Form Handler
+    function handleFranchiseSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const name = data.get('name');
+      const city = data.get('city');
+
+      const container = document.getElementById('franchiseFormContainer');
+      container.innerHTML = `
+        <div style="text-align: center; padding: 40px 20px;">
+          <h3 class="font-display text-cream" style="font-size: 2.2rem;">Thank you, ${name}</h3>
+          <p style="margin-top: 14px; font-size: 0.95rem; color: var(--muted-foreground); line-height: 1.6;">
+            Your enquiry details for <strong>${city}</strong> have been recorded. A member of the UKCO leadership team will follow up personally.
+          </p>
+          <button class="btn-pill-primary" style="margin-top: 24px;" onclick="window.location.reload()">
+            Send another
+          </button>
+        </div>
+      `;
+    }
+
+    // Founder Review Drawer Logic
+    function toggleFounderDrawer() {
+      const overlay = document.getElementById('founderDrawerOverlay');
+      overlay.classList.toggle('open');
+    }
+
+    function calcChecklist() {
+      const checked = document.querySelectorAll('#chkListContainer input[type="checkbox"]:checked').length;
+      document.getElementById('founderCounter').textContent = `${checked} / 11 Checked`;
+    }
+
+    function markAllFounderChecklist() {
+      document.querySelectorAll('#chkListContainer input[type="checkbox"]').forEach(c => c.checked = true);
+      calcChecklist();
+    }
+
+    function exportFounderJSON() {
+      const checked = document.querySelectorAll('#chkListContainer input[type="checkbox"]:checked').length;
+      const report = {
+        title: "UKCO Strategy & Rebuild Alignment - Founder Validation",
+        preparedFor: "Mr. Bhand",
+        referenceSite: "https://build-and-bloom-22.lovable.app/",
+        checkedCount: `${checked} / 11`,
+        date: new Date().toISOString(),
+        status: checked === 11 ? "Fully Approved by Mr. Bhand" : "In Progress"
+      };
+      const blob = new Blob([JSON.stringify(report, null, 2)], { type: "application/json" });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `UKCO_Founder_Alignment_${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+    }
+  </script>
+</body>
+</html>
